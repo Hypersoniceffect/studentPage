@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+a{
+  color: #333;
+  text-decoration:  none;
+}
+
+main{
+  width: 100px; 
+  min-width: 1000px;
+  margin: 50px;
+  background-color: #eee;
+  padding: 20px;
+}
+
+/*  */
+/* class="tabs" 設定*/
+/*  */
+.tabs{
+  /* 横並び */
+  display: flex;
+  /* 均等に並べる */
+  justify-content: space-between;
+}
+
+.tabs li{
+  width: 50%;
+}
+
+.tabs li a{
+  /* 上下左右設定 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+
+  background-color: #bbb;
+
+  /* 角丸 */
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+
+  transition: 0.3s;
+}
+
+/* スクリーンサイズ769px以上のとき、タグにカーソルあわせると半透明になる */
+@media screen and (min-width:769px){
+  /* not active aタグのとき */
+  .tabs li a:not(.active):hover{
+    opacity: 0.7;
+  }
+}
+
+.tabs li a.active{
+  background-color: #fff;
+}
+
+/*  */
+/* class="contents" 設定*/
+/*  */
+.contents li{
+  background-color: #fff;
+  padding: 20px;
+  /* 非表示 */
+  display: none;
+}
+
+.contents li.active{
+  /* 表示 */
+  display: block;
+}
